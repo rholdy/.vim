@@ -7,6 +7,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-surround'
 Plugin 'othree/html5.vim'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'ap/vim-css-color'
@@ -15,9 +16,18 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Yggdroot/indentLine'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'garbas/vim-snipmate'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 Plugin 'tomtom/tcomment_vim'
 Plugin 'marcweber/vim-addon-mw-utils'
+Plugin 'kien/ctrlp.vim'
+let g:ctrlp_extensions = ['funky']
+
+Plugin 'tacahiroy/ctrlp-funky'
+
+Plugin 'Lokaltog/vim-easymotion'
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_use_smartsign_us = 1
 
 " Ruby stuff
 set nocompatible
