@@ -29,6 +29,13 @@ Plugin 'Lokaltog/vim-easymotion'
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1
 
+nnoremap <silent> <leader>gs :Gstatus<CR>
+nnoremap <silent> <leader>gd :Gdiff<CR>
+nnoremap <silent> <leader>gc :Gcommit<CR>
+nnoremap <silent> <leader>gb :Gblame<CR>
+nnoremap <silent> <leader>ga :Git add .<CR>
+nnoremap <silent> <leader>gp :Git push<CR>
+
 " Ruby stuff
 set nocompatible
 syntax enable
@@ -47,6 +54,8 @@ set smartcase
 set number
 :highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
+" Keybindings
+map :nn :NERDTree
 
 augroup myfiletypes
     autocmd!
