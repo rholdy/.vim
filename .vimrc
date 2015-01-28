@@ -21,6 +21,7 @@ Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 Plugin 'tomtom/tcomment_vim'
 Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'kien/ctrlp.vim'
+Plugin 'gcmt/wildfire.vim'
 let g:ctrlp_extensions = ['funky']
 
 Plugin 'tacahiroy/ctrlp-funky'
@@ -28,6 +29,10 @@ Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'Lokaltog/vim-easymotion'
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1
+map <SPACE> <Plug>(wildfire-fuel)
+let g:wildfire_objects = {
+    \ "*" : ["i'", 'i"', "i)", "i]", "i}"]
+    \ }
 
 nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap <silent> <leader>gd :Gdiff<CR>
