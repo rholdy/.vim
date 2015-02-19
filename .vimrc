@@ -58,9 +58,10 @@ set ignorecase
 set smartcase
 set number
 :highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+:highlight clear SignColumn 
 
 " Keybindings
-map <F3> :NERDTree
+map <F3> :NERDTree<CR>
 
 augroup myfiletypes
     autocmd!
