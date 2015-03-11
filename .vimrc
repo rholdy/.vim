@@ -27,12 +27,18 @@ Plugin 'vim-scripts/HTML-AutoCloseTag'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
-let g:ctrlp_extensions = ['funky']
+Plugin 'ggreer/the_silver_searcher'
+Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'tacahiroy/ctrlp-funky'
+
+let g:ctrlp_extensions = ['funky']
 
 Plugin 'Lokaltog/vim-easymotion'
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1
+
+" ------- Mappings -------
+
 map :Q :q
 map :W :w
 
@@ -51,6 +57,15 @@ nnoremap <silent> <leader>gc :Gcommit<CR>
 nnoremap <silent> <leader>gb :Gblame<CR>
 nnoremap <silent> <leader>ga :Git add .<CR>
 nnoremap <silent> <leader>gp :Git push<CR>
+map <F3> :NERDTree<CR>
+map <C-h> ^
+map <C-j> GG
+map <C-k> gg
+map <C-l> $
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " Ruby stuff
 set nocompatible
@@ -70,13 +85,6 @@ set smartcase
 set number
 :highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 :highlight clear SignColumn 
-
-" Keybindings
-map <F3> :NERDTree<CR>
-map <C-h> ^
-map <C-j> GG
-map <C-k> gg
-map <C-l> $
 
 augroup myfiletypes
     autocmd!
@@ -109,6 +117,16 @@ let g:easytags_suppress_ctags_warning = 1
 nmap <silent> <leader>b :TagbarToggle<CR>
 " Uncomment to open tagbar automatically whenever possible
 "autocmd BufEnter * nested :call tagbar#autoopen(0)
+
+" --- ctrlp stuff to make it not slow ----
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+      \ --ignore .git
+      \ --ignore .svn
+      \ --ignore .hg
+      \ --ignore .DS_Store
+      \ --ignore "**/*.pyc"
+      \ -g ""'
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 " Ruby Complete
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
