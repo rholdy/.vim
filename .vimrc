@@ -90,18 +90,18 @@ augroup myfiletypes
     autocmd!
     autocmd FileType slim,coffee,ruby,eruby,yaml set ai sw=2 sts=2 et
 augroup END
-" augroup mydelimitMate
-"   au!
-"   au FileType ruby let b:delimitMate_nesting_quotes = ["`"]
-"   au FileType ruby let b:delimitMate_quotes = ""
-"   au FileType ruby let b:delimitMate_nesting_quotes = ['"', "'"]
-"   au FileType ruby let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
-"   au FileType eruby let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
-"   au FileType eruby let b:delimitMate_nesting_quotes = ['"', "'"]
-"   au FileType eruby let b:delimitMate_nesting_quotes = ["`"]
-"   au FileType eruby let b:delimitMate_quotes = ""
-" augroup END
-"
+augroup mydelimitMate
+  au!
+  au FileType ruby let b:delimitMate_nesting_quotes = ["`"]
+  au FileType ruby let b:delimitMate_quotes = ""
+  au FileType ruby let b:delimitMate_nesting_quotes = ['"', "'"]
+  au FileType ruby let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
+  au FileType eruby let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
+  au FileType eruby let b:delimitMate_nesting_quotes = ['"', "'"]
+  au FileType eruby let b:delimitMate_nesting_quotes = ["`"]
+  au FileType eruby let b:delimitMate_quotes = ""
+augroup END
+
 " ----- xolox/vim-easytags settings -----
 " Where to look for tags files
 set tags=./tags;,~/.vimtags
@@ -131,4 +131,21 @@ let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 " Ruby Complete
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+
+"------------- General Settings--------------
+" Make those debugger statements painfully obvious
+au BufEnter *.rb syn match error contained "\<binding.pry\>"
+au BufEnter *.rb syn match error contained "\<debugger\>"
+set nobackup                    " don't want no backup files
+set nowritebackup               " don't make a backup before overwriting a file
+set noswapfile                  " no swap files"
+set incsearch                   " incremental searching
+set ignorecase                  " searches are case insensitive...
+set smartcase                   " ... unless they contain at least one capital letter
+set scrolloff=0                 " keep a 5 line padding when moving the cursor
+set autoindent                  " indent on enter
+set smartindent                 " do smart indenting when starting a new line
+set shiftround                  " indent to the closest shiftwidth"
+nnoremap <leader>h :noh<cr>
+
 highlight Pmenu ctermbg=238 gui=bold
