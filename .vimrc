@@ -30,6 +30,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'ggreer/the_silver_searcher'
 Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'kien/rainbow_parentheses.vim'
 
 let g:ctrlp_extensions = ['funky']
 
@@ -112,6 +113,33 @@ let g:easytags_dynamic_files = 2
 let g:easytags_resolve_links = 1
 let g:easytags_suppress_ctags_warning = 1
 
+" ----- Rainbow Parens stuff
+" let g:rbpt_colorpairs = [
+"     \ ['brown',       'RoyalBlue3'],
+"     \ ['Darkblue',    'SeaGreen3'],
+"     \ ['darkgray',    'DarkOrchid3'],
+"     \ ['darkgreen',   'firebrick3'],
+"     \ ['darkcyan',    'RoyalBlue3'],
+"     \ ['darkred',     'SeaGreen3'],
+"     \ ['darkmagenta', 'DarkOrchid3'],
+"     \ ['brown',       'firebrick3'],
+"     \ ['gray',        'RoyalBlue3'],
+"     \ ['black',       'SeaGreen3'],
+"     \ ['darkmagenta', 'DarkOrchid3'],
+"     \ ['Darkblue',    'firebrick3'],
+"     \ ['darkgreen',   'RoyalBlue3'],
+"     \ ['darkcyan',    'SeaGreen3'],
+"     \ ['darkred',     'DarkOrchid3'],
+"     \ ['red',         'firebrick3'],
+"     \ ]
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
 " ----- majutsushi/tagbar settings -----
 " Open/close tagbar with \b
 nmap <silent> <leader>b :TagbarToggle<CR>
@@ -147,5 +175,34 @@ set autoindent                  " indent on enter
 set smartindent                 " do smart indenting when starting a new line
 set shiftround                  " indent to the closest shiftwidth"
 nnoremap <leader>h :noh<cr>
+
+" Don't continue comment mark after press 'o' when youre on a commented line
+  au VimEnter * set formatoptions -=cro
+
+" Selection {
+" Change selected letters when write
+  set selectmode=mouse,key
+
+" Select with SHIFT + ARROW for Vim-noobs
+  set keymodel=startsel,stopsel
+
+" Enable select with mouse in insert mode
+  set selection=exclusive
+
+" Can move cursor past end of line, where there are no characters, in visualblock mode
+  set virtualedit=block
+
+" Visual selection automatically copied to clipboard
+  set go+=a
+""}
+" Allow backspacing over everything in insert mode.
+  set backspace=indent,eol,start
+" Automatically enable mouse usage, but don't forget to feed him sometimes.
+  set mouse=a 
+" Hide mouse when typing.
+  set mousehide
+" Automatically jump to end of text thats pasted/yanked, feels inuitively.
+  noremap <silent> y y`]
+  noremap <silent> p p`]
 
 highlight Pmenu ctermbg=238 gui=bold
