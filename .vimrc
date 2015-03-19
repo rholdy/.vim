@@ -38,6 +38,16 @@ Plugin 'Lokaltog/vim-easymotion'
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1
 
+" ------ EasyTags stuff
+" Where to look for tags files
+set tags=./tags;,~/.vimtags
+" Sensible defaults
+let g:easytags_events = ['BufReadPost', 'BufWritePost']
+let g:easytags_async = 1
+let g:easytags_dynamic_files = 2
+let g:easytags_resolve_links = 1
+let g:easytags_suppress_ctags_warning = 1
+
 " ------- Mappings -------
 
 map :Q :q
@@ -91,6 +101,7 @@ augroup myfiletypes
     autocmd!
     autocmd FileType slim,coffee,ruby,eruby,yaml set ai sw=2 sts=2 et
 augroup END
+
 augroup mydelimitMate
   au!
   au FileType ruby let b:delimitMate_nesting_quotes = ["`"]
@@ -103,35 +114,7 @@ augroup mydelimitMate
   au FileType eruby let b:delimitMate_quotes = ""
 augroup END
 
-" ----- xolox/vim-easytags settings -----
-" Where to look for tags files
-set tags=./tags;,~/.vimtags
-" Sensible defaults
-let g:easytags_events = ['BufReadPost', 'BufWritePost']
-let g:easytags_async = 1
-let g:easytags_dynamic_files = 2
-let g:easytags_resolve_links = 1
-let g:easytags_suppress_ctags_warning = 1
-
 " ----- Rainbow Parens stuff
-" let g:rbpt_colorpairs = [
-"     \ ['brown',       'RoyalBlue3'],
-"     \ ['Darkblue',    'SeaGreen3'],
-"     \ ['darkgray',    'DarkOrchid3'],
-"     \ ['darkgreen',   'firebrick3'],
-"     \ ['darkcyan',    'RoyalBlue3'],
-"     \ ['darkred',     'SeaGreen3'],
-"     \ ['darkmagenta', 'DarkOrchid3'],
-"     \ ['brown',       'firebrick3'],
-"     \ ['gray',        'RoyalBlue3'],
-"     \ ['black',       'SeaGreen3'],
-"     \ ['darkmagenta', 'DarkOrchid3'],
-"     \ ['Darkblue',    'firebrick3'],
-"     \ ['darkgreen',   'RoyalBlue3'],
-"     \ ['darkcyan',    'SeaGreen3'],
-"     \ ['darkred',     'DarkOrchid3'],
-"     \ ['red',         'firebrick3'],
-"     \ ]
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
 
@@ -194,7 +177,8 @@ nnoremap <leader>h :noh<cr>
 
 " Visual selection automatically copied to clipboard
   set go+=a
-""}
+"}
+
 " Allow backspacing over everything in insert mode.
   set backspace=indent,eol,start
 " Automatically enable mouse usage, but don't forget to feed him sometimes.
