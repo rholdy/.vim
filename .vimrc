@@ -68,7 +68,7 @@ nnoremap <silent> <leader>gc :Gcommit<CR>
 nnoremap <silent> <leader>gb :Gblame<CR>
 nnoremap <silent> <leader>ga :Git add .<CR>
 nnoremap <silent> <leader>gp :Git push<CR>
-map <F3> :NERDTree<CR>
+map <Delete> :NERDTreeToggle<CR>
 map <C-h> ^
 map <C-j> GG
 map <C-k> gg
