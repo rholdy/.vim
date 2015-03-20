@@ -31,6 +31,7 @@ Plugin 'ggreer/the_silver_searcher'
 Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'vim-scripts/closetag.vim'
 
 let g:ctrlp_extensions = ['funky']
 
@@ -52,6 +53,10 @@ let g:easytags_suppress_ctags_warning = 1
 
 map :Q :q
 map :W :w
+
+inoremap <C-c> <C-R>=GetCloseTag()<CR>
+map <C-c> a<C-c><ESC>
+vnoremap <C-C> :w !pbcopy<CR><CR>
 
 map <SPACE> <Plug>(wildfire-fuel)
 let g:wildfire_objects = {
