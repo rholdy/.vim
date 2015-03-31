@@ -19,6 +19,9 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 Plugin 'tomtom/tcomment_vim'
 Plugin 'marcweber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 Plugin 'kien/ctrlp.vim'
 Plugin 'gcmt/wildfire.vim'
 Plugin 'terryma/vim-multiple-cursors'
@@ -54,7 +57,6 @@ let g:easytags_suppress_ctags_warning = 1
 map :Q :q
 map :W :w
 
-inoremap <C-c> <C-R>=GetCloseTag()<CR>
 map <C-c> a<C-c><ESC>
 vnoremap <C-C> :w !pbcopy<CR><CR>
 
@@ -190,8 +192,5 @@ nnoremap <leader>h :noh<cr>
   set mouse=a 
 " Hide mouse when typing.
   set mousehide
-" Automatically jump to end of text thats pasted/yanked, feels inuitively.
-  noremap <silent> y y`]
-  noremap <silent> p p`]
 
 highlight Pmenu ctermbg=238 gui=bold
