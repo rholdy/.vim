@@ -39,29 +39,32 @@ PS1="${YELLOW}\h${WHITE} [${GREEN}\W${WHITE}]${WHITE}[${CYAN}\$(parse_git_branch
 export LSCOLORS="gxfxcxdxbxegedabagacad"
 
 ####################################
-## File listing aliases
+## Navigation Aliases
 ####################################
 alias ls='ls -G'
 alias ll='ls -lahF'
 alias l='ls -l'
 alias v='vim'
 alias cd..='cd ..'
+alias tlog="tail -f log/development.log"
+
 alias gs='git status'
 alias ga='git add --all'
 alias gp='git push'
+alias gca='git commit --amend'
+alias pull='git pull && bundle && rake db:migrate && bin/restart && sidekiq_restart'
+
 alias sidekiq_restart='launchctl unload ~/Library/LaunchAgents/mc-jobs-1.plist && launchctl load ~/Library/LaunchAgents/mc-jobs-1.plist'
 alias run_tests='COVERAGE=true rspec -f doc --exclude-pattern "**/selenium/**/*_spec.rb"'
 
-alias pull='git pull && bundle && rake db:migrate && bin/restart && sidekiq_restart'
+alias mc="cd ~/masteryconnect"
+alias mmm="cd ~/marketing_site/middleman_marketing"
 ####################################
 ## show my IP address
 ####################################
 alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\  -f2 | tail -n1"
 alias myips="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\  -f2"
 alias myextip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias tlog="tail -f log/development.log"
-alias mc="cd ~/masteryconnect"
-alias mmm="cd ~/marketing_site/middleman_marketing"
 
 # Git tab completion
 source ~/git-completion.bash

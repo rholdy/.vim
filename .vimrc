@@ -59,6 +59,7 @@ map :W :w
 
 map <C-c> a<C-c><ESC>
 vnoremap <C-C> :w !pbcopy<CR><CR>
+map <Leader>ff mfgg=G`fzz
 
 map <SPACE> <Plug>(wildfire-fuel)
 let g:wildfire_objects = {
@@ -122,6 +123,23 @@ augroup mydelimitMate
 augroup END
 
 " ----- Rainbow Parens stuff
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
 
