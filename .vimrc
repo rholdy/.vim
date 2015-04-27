@@ -9,8 +9,8 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-surround'
 Plugin 'othree/html5.vim'
-Plugin 'Lokaltog/vim-powerline'
 Plugin 'ap/vim-css-color'
+Plugin 'bling/vim-airline'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Yggdroot/indentLine'
@@ -85,6 +85,10 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+" Reselect visual block after indent/outdent
+" http://www.vimbits.com/bits/20
+vnoremap < <gv
+vnoremap > >gv
 
 " Ruby stuff
 set nocompatible
@@ -169,6 +173,19 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 
 "------------- General Settings--------------
+"---Buffer Stuff
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" Move to the next buffer
+nmap <leader>k :bnext<CR>
+
+" Move to the previous buffer
+nmap <leader>j :bprevious<CR>
+
+" Show all open buffers and their status
+nmap <leader>bl :ls<CR>
+
 " Make those debugger statements painfully obvious
 au BufEnter *.rb syn match error contained "\<binding.pry\>"
 au BufEnter *.rb syn match error contained "\<debugger\>"
