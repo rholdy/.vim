@@ -18,6 +18,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 Plugin 'tomtom/tcomment_vim'
+Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
@@ -57,9 +58,15 @@ let g:easytags_suppress_ctags_warning = 1
 map :Q :q
 map :W :w
 
+" cntrl+c to copy to system clipboard
 map <C-c> a<C-c><ESC>
 vnoremap <C-C> :w !pbcopy<CR><CR>
-map <Leader>ff mfgg=G`fzz
+
+"leader ff to fix indents in the whole file
+map <Leader>ff mfgg=G`fzz<CR>
+
+"leader fw to remove trailing whitespace
+map <Leader>fw :StripWhitespace<CR>
 
 map <SPACE> <Plug>(wildfire-fuel)
 let g:wildfire_objects = {
@@ -107,7 +114,7 @@ set ignorecase
 set smartcase
 set number
 :highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
-:highlight clear SignColumn 
+:highlight clear SignColumn
 
 augroup myfiletypes
     autocmd!
@@ -224,7 +231,7 @@ nnoremap <leader>h :noh<cr>
 " Allow backspacing over everything in insert mode.
   set backspace=indent,eol,start
 " Automatically enable mouse usage, but don't forget to feed him sometimes.
-  set mouse=a 
+  set mouse=a
 " Hide mouse when typing.
   set mousehide
 
