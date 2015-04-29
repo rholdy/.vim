@@ -34,6 +34,7 @@ J - join line below to the current one
 cc - change (replace) an entire line
 cw - change (replace) to the end of word
 c$ - change (replace) to the end of line
+ci”, ci), ci] - replace whats inside the quotes or brackets
 s - delete character at cursor and subsitute text
 S - delete line at cursor and substitute text (same as cc)
 xp - transpose two letters (delete and paste, technically)
@@ -60,6 +61,7 @@ Visual commands
 < - shift left
 y - yank (copy) marked text
 d - delete marked text
+D - delete to the end of the line
 ~ - switch case
 
 Cut and Paste
@@ -80,6 +82,7 @@ Exiting
 :wq - write (save) and quit
 :q - quit (fails if anything has changed)
 :q! - quit and throw away changes
+:x, ZZ, cntrl-z - save and quit
 
 Search/Replace
 
