@@ -116,8 +116,10 @@ cntrl-n - complete
 cntrl-c - Close HTML tag:q
 "5p      - paste what's in register "5
 /ff - fix indents
+<leader>fw - fix whitespace
 ]c - jump to next changed hunk
 [c - jump to previous changed hunk
 <leader>hs - stage change under your cursor
 <leader>hu - revert change under your cursor
+cntrl-f - Pull up command line commands
 

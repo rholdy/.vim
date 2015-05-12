@@ -67,6 +67,7 @@ map <Leader>ff mfgg=G`fzz<CR>
 
 "leader fw to remove trailing whitespace
 map <Leader>fw :StripWhitespace<CR>
+autocmd BufWritePre <buffer> StripWhitespace
 
 map <SPACE> <Plug>(wildfire-fuel)
 let g:wildfire_objects = {
