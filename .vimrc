@@ -78,27 +78,28 @@ cal wildfire#triggers#Add("<ENTER>", {
     \ "html,xml" : ["at", "it"],
     \ })")"']}
 
+" Git Stuff
 nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap <silent> <leader>gd :Gdiff<CR>
 nnoremap <silent> <leader>gc :Gcommit<CR>
 nnoremap <silent> <leader>gb :Gblame<CR>
 nnoremap <silent> <leader>ga :Git add .<CR>
 nnoremap <silent> <leader>gp :Git push<CR>
+
+" Delete to pop open Nerd Tree
 map <Delete> :NERDTreeToggle<CR>
-map <C-h> ^
-map <C-j> GG
-map <C-k> gg
-map <C-l> $
+
+"control-h,j,k,l to switch window panes
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
 " Reselect visual block after indent/outdent
-" http://www.vimbits.com/bits/20
 vnoremap < <gv
 vnoremap > >gv
 
-" Ruby stuff
+" Random Setting stuff
 set nocompatible
 syntax enable
 filetype plugin indent on
@@ -114,6 +115,8 @@ set incsearch
 set ignorecase
 set smartcase
 set number
+
+"set the line number background to be something not sucky
 :highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 :highlight clear SignColumn
 
@@ -197,6 +200,8 @@ nmap <leader>bl :ls<CR>
 " Make those debugger statements painfully obvious
 au BufEnter *.rb syn match error contained "\<binding.pry\>"
 au BufEnter *.rb syn match error contained "\<debugger\>"
+
+
 set nobackup                    " don't want no backup files
 set nowritebackup               " don't make a backup before overwriting a file
 set noswapfile                  " no swap files"
@@ -207,6 +212,8 @@ set scrolloff=0                 " keep a 5 line padding when moving the cursor
 set autoindent                  " indent on enter
 set smartindent                 " do smart indenting when starting a new line
 set shiftround                  " indent to the closest shiftwidth"
+
+" clear search
 nnoremap <leader>h :noh<cr>
 
 " Don't continue comment mark after press 'o' when youre on a commented line
