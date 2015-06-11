@@ -123,3 +123,19 @@ cntrl-c - Close HTML tag:q
 <leader>hu - revert change under your cursor
 cntrl-f - Pull up command line commands
 
+Surrounds
+cs” - change surrounds
+dst - delete surrounding tags
+ys( - add surrounds
+
+
+Vim Rails
+gf - open file under cursor
+:A, :AS, - open alternate file
+:R, :RS, - open related file
+:[range]Rextract [{controller}/]{name} - Extract content in range into a partial
+:Rabbrev {abbr} {expn} [{extra}] - Defines a new Abbreviation
+
+
+
+
