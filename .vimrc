@@ -69,6 +69,9 @@ map <Leader>ff mfgg=G`fzz<CR>
 map <Leader>fw :StripWhitespace<CR>
 autocmd BufWritePre <buffer> StripWhitespace
 
+"leader b to close open buffer without closing the window
+nmap <Leader>cb <Plug>Kwbd
+
 map <SPACE> <Plug>(wildfire-fuel)
 let g:wildfire_objects = {
     \ "*" : ["i'", 'i"', "i)", "i]", "i}"]
