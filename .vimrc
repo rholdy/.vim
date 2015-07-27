@@ -32,6 +32,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
 Plugin 'ggreer/the_silver_searcher'
+Plugin 'rking/ag.vim'
 Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'kien/rainbow_parentheses.vim'
@@ -247,3 +248,4 @@ nnoremap <leader>h :noh<cr>
   set mousehide
 
 highlight Pmenu ctermbg=238 gui=bold
+set runtimepath^=~/.vim/bundle/ag
