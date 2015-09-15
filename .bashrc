@@ -56,6 +56,7 @@ alias pull='git pull && bundle && rake db:migrate && bin/restart && sidekiq_rest
 
 alias sidekiq_restart='launchctl unload ~/Library/LaunchAgents/mc-jobs-1.plist && launchctl load ~/Library/LaunchAgents/mc-jobs-1.plist'
 alias run_tests='COVERAGE=true rspec -f doc --exclude-pattern "**/selenium/**/*_spec.rb"'
+alias db='mycli mask -u root'
 
 alias mc="cd ~/masteryconnect"
 alias mmm="cd ~/marketing_site/middleman_marketing"

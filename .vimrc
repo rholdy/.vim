@@ -119,6 +119,7 @@ set incsearch
 set ignorecase
 set smartcase
 set number
+let NERDTreeShowHidden=1
 
 "set the line number background to be something not sucky
 :highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
