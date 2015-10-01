@@ -73,6 +73,9 @@ autocmd BufWritePre <buffer> StripWhitespace
 "leader b to close open buffer without closing the window
 nmap <Leader>cb <Plug>Kwbd
 
+"leader e to spit out erb tags
+map <Leader>e vS=
+
 map <SPACE> <Plug>(wildfire-fuel)
 let g:wildfire_objects = {
     \ "*" : ["i'", 'i"', "i)", "i]", "i}"]
