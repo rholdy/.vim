@@ -37,6 +37,7 @@ Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'vim-scripts/closetag.vim'
+Plugin 'elixir-lang/vim-elixir'
 
 let g:ctrlp_extensions = ['funky']
 
@@ -94,7 +95,7 @@ nnoremap <silent> <leader>ga :Git add .<CR>
 nnoremap <silent> <leader>gp :Git push<CR>
 
 " Delete to pop open Nerd Tree
-map <Delete> :NERDTreeToggle<CR>
+map <BS> :NERDTreeToggle<CR>
 
 "control-h,j,k,l to switch window panes
 nnoremap <C-h> <C-w>h
