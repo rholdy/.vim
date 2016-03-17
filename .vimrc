@@ -124,6 +124,7 @@ set ignorecase
 set smartcase
 set number
 let NERDTreeShowHidden=1
+let g:NERDTreeWinPos = "right"
 
 "set the line number background to be something not sucky
 :highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
