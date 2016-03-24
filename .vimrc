@@ -1,3 +1,4 @@
+execute pathogen#infect()
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -25,7 +26,6 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Raimondi/delimitMate'
 Plugin 'vim-scripts/HTML-AutoCloseTag'
-Plugin 'majutsushi/tagbar'
 Plugin 'ggreer/the_silver_searcher'
 Plugin 'rking/ag.vim'
 Plugin 'FelikZ/ctrlp-py-matcher'
@@ -124,12 +124,6 @@ augroup mydelimitMate
   au FileType eruby let b:delimitMate_nesting_quotes = ["`"]
   au FileType eruby let b:delimitMate_quotes = ""
 augroup END
-
-" ----- majutsushi/tagbar settings -----
-" Open/close tagbar with \b
-nmap <silent> <leader>b :TagbarToggle<CR>
-" Uncomment to open tagbar automatically whenever possible
-"autocmd BufEnter * nested :call tagbar#autoopen(0)
 
 " --- ctrlp stuff to make it not slow ----
 let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
