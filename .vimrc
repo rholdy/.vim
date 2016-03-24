@@ -1,5 +1,3 @@
-execute pathogen#infect()
-
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -24,36 +22,25 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'kien/ctrlp.vim'
-Plugin 'gcmt/wildfire.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Raimondi/delimitMate'
 Plugin 'vim-scripts/HTML-AutoCloseTag'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
 Plugin 'ggreer/the_silver_searcher'
 Plugin 'rking/ag.vim'
 Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'tacahiroy/ctrlp-funky'
-Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'vim-scripts/closetag.vim'
 Plugin 'elixir-lang/vim-elixir'
+
+Plugin 'luochen1990/rainbow'
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle"
 
 let g:ctrlp_extensions = ['funky']
 
 Plugin 'Lokaltog/vim-easymotion'
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1
-
-" ------ EasyTags stuff
-" Where to look for tags files
-set tags=./tags;,~/.vimtags
-" Sensible defaults
-let g:easytags_events = ['BufReadPost', 'BufWritePost']
-let g:easytags_async = 1
-let g:easytags_dynamic_files = 2
-let g:easytags_resolve_links = 1
-let g:easytags_suppress_ctags_warning = 1
 
 " ------- Mappings -------
 
@@ -76,15 +63,6 @@ nmap <Leader>cb <Plug>Kwbd
 
 "leader e to spit out erb tags
 map <Leader>e vS=
-
-map <SPACE> <Plug>(wildfire-fuel)
-let g:wildfire_objects = {
-    \ "*" : ["i'", 'i"', "i)", "i]", "i}"]
-    \ }
-
-cal wildfire#triggers#Add("<ENTER>", {
-    \ "html,xml" : ["at", "it"],
-    \ })")"']}
 
 " Git Stuff
 nnoremap <silent> <leader>gs :Gstatus<CR>
@@ -146,32 +124,6 @@ augroup mydelimitMate
   au FileType eruby let b:delimitMate_nesting_quotes = ["`"]
   au FileType eruby let b:delimitMate_quotes = ""
 augroup END
-
-" ----- Rainbow Parens stuff
-let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
-let g:rbpt_max = 16
-let g:rbpt_loadcmd_toggle = 0
-
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
 
 " ----- majutsushi/tagbar settings -----
 " Open/close tagbar with \b
