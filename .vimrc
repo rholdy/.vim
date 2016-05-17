@@ -32,6 +32,8 @@ Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'vim-scripts/closetag.vim'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'slim-template/vim-slim'
+Plugin 'elzr/vim-json'
 
 Plugin 'luochen1990/rainbow'
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle"
@@ -92,7 +94,7 @@ filetype plugin indent on
 set autowrite
 set grepprg=ack
 set showcmd
-set nowrap
+" set nowrap
 set tabstop=2 shiftwidth=2
 set expandtab
 set backspace=indent,eol,start
@@ -110,7 +112,7 @@ let g:NERDTreeWinPos = "right"
 
 augroup myfiletypes
     autocmd!
-    autocmd FileType slim,coffee,ruby,eruby,yaml set ai sw=2 sts=2 et
+    autocmd FileType slim,coffee,ruby,eruby,yaml,json,coffee set ai sw=2 sts=2 et
 augroup END
 
 augroup mydelimitMate
