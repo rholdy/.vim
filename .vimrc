@@ -1,8 +1,10 @@
-execute pathogen#infect()
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-endwise'
@@ -43,6 +45,8 @@ let g:ctrlp_extensions = ['funky']
 Plugin 'Lokaltog/vim-easymotion'
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1
+
+
 
 " ------- Mappings -------
 
@@ -112,7 +116,7 @@ let g:NERDTreeWinPos = "right"
 
 augroup myfiletypes
     autocmd!
-    autocmd FileType slim,coffee,ruby,eruby,yaml,json,coffee set ai sw=2 sts=2 et
+    autocmd FileType slim,coffee,ruby,eruby,yaml,json,coffee,ex,exs,eex,js set ai sw=2 sts=2 et
 augroup END
 
 augroup mydelimitMate
