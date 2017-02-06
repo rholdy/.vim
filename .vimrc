@@ -18,6 +18,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+Plugin 'dracula/vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'marcweber/vim-addon-mw-utils'
@@ -36,6 +37,9 @@ Plugin 'vim-scripts/closetag.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'slim-template/vim-slim'
 Plugin 'elzr/vim-json'
+Plugin 'scrooloose/syntastic'
+Plugin 'neomake/neomake'
+Plugin 'slashmili/alchemist.vim'
 
 Plugin 'luochen1990/rainbow'
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle"
@@ -46,7 +50,7 @@ Plugin 'Lokaltog/vim-easymotion'
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1
 
-
+call vundle#end()
 
 " ------- Mappings -------
 
@@ -62,13 +66,16 @@ map <Leader>ff mfgg=G`fzz<CR>
 
 "leader fw to remove trailing whitespace
 map <Leader>fw :StripWhitespace<CR>
-autocmd BufWritePre <buffer> StripWhitespace
+"autocmd BufWritePre <buffer> StripWhitespace
 
 "leader b to close open buffer without closing the window
 nmap <Leader>cb <Plug>Kwbd
 
 "leader e to spit out erb tags
 map <Leader>e vS=
+
+" alchemist
+let g:alchemist_tag_disable = 1
 
 " Git Stuff
 nnoremap <silent> <leader>gs :Gstatus<CR>
@@ -77,6 +84,22 @@ nnoremap <silent> <leader>gc :Gcommit<CR>
 nnoremap <silent> <leader>gb :Gblame<CR>
 nnoremap <silent> <leader>ga :Git add .<CR>
 nnoremap <silent> <leader>gp :Git push<CR>
+
+" Syntastic Stuff
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_ruby_checkers = ['rubocop']
+
+" Neomake lint stuff
+autocmd! BufWritePost * Neomake
+let g:neomake_elixir_enabled_makers = ['credo']
+
 
 " Delete to pop open Nerd Tree
 map <BS> :NERDTreeToggle<CR>
@@ -205,5 +228,7 @@ nnoremap <leader>h :noh<cr>
 " Hide mouse when typing.
   set mousehide
 
+highlight Search guibg=Yellow guifg=Black ctermbg=Yellow ctermfg=Black
 highlight Pmenu ctermbg=238 gui=bold
 set runtimepath^=~/.vim/bundle/ag
+
