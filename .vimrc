@@ -17,8 +17,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Yggdroot/indentLine'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
-Plugin 'dracula/vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'marcweber/vim-addon-mw-utils'
@@ -51,6 +49,9 @@ let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1
 
 call vundle#end()
+syntax on
+color dracula
+set guioptions-=r 
 
 " ------- Mappings -------
 
