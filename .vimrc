@@ -35,9 +35,11 @@ Plugin 'vim-scripts/closetag.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'slim-template/vim-slim'
 Plugin 'elzr/vim-json'
-Plugin 'scrooloose/syntastic'
-Plugin 'neomake/neomake'
+" Plugin 'scrooloose/syntastic'
+" Plugin 'neomake/neomake'
 Plugin 'slashmili/alchemist.vim'
+Plugin 'valloric/youcompleteme'
+Plugin 'w0rp/ale'
 
 Plugin 'luochen1990/rainbow'
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle"
@@ -87,19 +89,25 @@ nnoremap <silent> <leader>ga :Git add .<CR>
 nnoremap <silent> <leader>gp :Git push<CR>
 
 " Syntastic Stuff
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_ruby_checkers = ['rubocop']
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+"
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_ruby_checkers = ['rubocop']
 
 " Neomake lint stuff
-autocmd! BufWritePost * Neomake
-let g:neomake_elixir_enabled_makers = ['credo']
+" autocmd! BufWritePost * Neomake
+" let g:neomake_elixir_enabled_makers = ['credo']
+
+" Write this in your vimrc file
+let g:ale_lint_on_text_changed = 'never'
+" You can disable this option too
+" if you don't want linters to run on opening a file
+let g:ale_lint_on_enter = 0
 
 
 " Delete to pop open Nerd Tree
