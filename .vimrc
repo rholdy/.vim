@@ -198,6 +198,8 @@ set scrolloff=0                 " keep a 5 line padding when moving the cursor
 set autoindent                  " indent on enter
 set smartindent                 " do smart indenting when starting a new line
 set shiftround                  " indent to the closest shiftwidth"
+set undofile
+set undodir=~/.vim/undodir
 
 " clear search
 nnoremap <leader>h :noh<cr>
